@@ -35,8 +35,11 @@
 -receptions_id(INTEGER)
 
 -patients_id(INTEGER)
+
 -data_time(DATATIME)
+
 -complaints(TEXT) 
+
 -diagnosis(TEXT) 
 
 ![](screen/receptions.png)
