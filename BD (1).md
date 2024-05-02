@@ -92,7 +92,7 @@
 
 ![](screen/specialitions b.png)
 
-#Демонстрация работы с запросами:
+# Демонстрация работы с запросами:
 1. UNION 
 
 ![](CODE/UNION.png)
