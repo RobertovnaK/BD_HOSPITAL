@@ -32,7 +32,7 @@
 
 ### 3. receptions
 
--receptions_id(INTEGER)
+-receptions_id(INTEGER) \n
 -patients_id(INTEGER)
 -data_time(DATATIME)
 -complaints(TEXT) 
