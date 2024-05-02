@@ -18,7 +18,7 @@
        
 ![](screen/doctors.png)
 
-![](screen/doctors b.png)
+![](screen/doctorsb.png)
 
 ### 2. patients
 
@@ -38,7 +38,7 @@
 
 ![](screen/patients.png)
 
-![](screen/patients b.png)
+![](screen/patientsb.png)
 
 ### 3. receptions
 
@@ -54,7 +54,7 @@
 
 ![](screen/receptions.png)
 
-![](screen/receptions b.png)
+![](screen/receptionsb.png)
 
 ### 4. schedules
 
@@ -68,7 +68,7 @@
 
 ![](screen/schedules.png)
 
-![](screen/schedules b.png)
+![](screen/schedulesb.png)
 
 ### 5. sick_leaves
 
@@ -80,7 +80,7 @@
 
 ![](screen/sick_leaves.png)
 
-![](screen/sick_leaves b.png)
+![](screen/sick_leavesb.png)
 
 ### 6. specialtions
 
@@ -90,7 +90,7 @@
 
 ![](screen/spicialitions.png)
 
-![](screen/specialitions b.png)
+![](screen/specialitionsb.png)
 
 # Демонстрация работы с запросами:
 1. UNION 
@@ -101,7 +101,7 @@
 
 2. ORDER BY
 
-![](CODE/ORDER BY.png)
+![](CODE/ORDERBY.png)
 
 Этот запрос выбирате имена и дату рождения из таблицы patients и сортирует результаты по дате рождения в порядке убывания. В итоге, этот код выводит список пациентов, отсортированных по дате рождения.
 
