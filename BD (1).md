@@ -6,10 +6,14 @@
 
 ### 1. doctors
 
--doctors_id (INTEGER)      
--name (TEXT)         
+-doctors_id (INTEGER)
+
+-name (TEXT)
+
 -adress (TEXT)
+
 -birthday (DATE)
+
 -telephone(TEXT) 
        
 ![](screen/doctors.png)
@@ -18,12 +22,18 @@
 
 ### 2. patients
 
--patients_id(INTEGER)            
--name(TEXT)           
+-patients_id(INTEGER)
+
+-name(TEXT)  
+
 -adress(TEXT)
+
 -birthday(DATE)
+
 -telephone(TEXT)
+
 -gender(TEXT)
+
 -policy (TEXT)
 
 ![](screen/patients.png)
@@ -49,8 +59,11 @@
 ### 4. schedules
 
 -schedules_id(INTEGER)
+
 -doctors_id(INTEGER)
+
 -office_number(TEXT) 
+
 -data_time(DATATIME)
 
 ![](screen/schedules.png)
@@ -60,7 +73,9 @@
 ### 5. sick_leaves
 
 -doctors_id(INTEGER)
+
 -patients_id(INTEGER)
+
 -diagnosis(TEXT) 
 
 ![](screen/sick_leaves.png)
@@ -70,6 +85,7 @@
 ### 6. specialtions
 
 -doctors_id(INTEGER)
+
 -name(TEXT) 
 
 ![](screen/spicialitions.png)
