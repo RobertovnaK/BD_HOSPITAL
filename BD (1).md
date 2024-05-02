@@ -1,9 +1,10 @@
-## Калимуллина Анита Робертовна
+Калимуллина Анита Робертовна
 
-#Эта база данных моделирует информацию о больнице, включая данные о врачах, пациентах, специальностях и больничных листах, премах и расписаниях. 
+##Эта база данных моделирует информацию о больнице, включая данные о врачах, пациентах, специальностях и больничных листах, премах и расписаниях. 
 
 ##Сущности (Таблицы)
-#### 1. doctors
+
+### 1. doctors
 
 -doctors_id (INTEGER)      
 -name (TEXT)         
@@ -14,7 +15,8 @@
 ![](screen/doctors.png)
 ![](screen/doctors b.png)
 
-#### 2. patients
+### 2. patients
+
 -patients_id(INTEGER)            
 -name(TEXT)           
 -adress(TEXT)
@@ -22,39 +24,49 @@
 -telephone(TEXT)
 -gender(TEXT)
 -policy (TEXT)
+
 ![](screen/patients.png)
 ![](screen/patients b.png)
 
-#### 3. receptions
+### 3. receptions
+
 -receptions_id(INTEGER)
 -patients_id(INTEGER)
 -data_time(DATATIME)
 -complaints(TEXT) 
 -diagnosis(TEXT) 
+
 ![](screen/receptions.png)
 ![](screen/receptions b.png)
 
-#### 4. schedules
+### 4. schedules
+
 -schedules_id(INTEGER)
 -doctors_id(INTEGER)
 -office_number(TEXT) 
 -data_time(DATATIME)
+
 ![](screen/schedules.png)
 ![](screen/schedules b.png)
 
-#### 5. sick_leaves
+### 5. sick_leaves
+
 -doctors_id(INTEGER)
 -patients_id(INTEGER)
 -diagnosis(TEXT) 
+
 ![](screen/sick_leaves.png)
 ![](screen/sick_leaves b.png)
 
-#### 6. specialtions
+### 6. specialtions
+
 -doctors_id(INTEGER)
 -name(TEXT) 
+
 ![](screen/spicialitions.png)
 ![](screen/specialitions b.png)
-Демонстрация работы с запросами:
+
+#Демонстрация работы с запросами:
 1. UNION 
 ![](CODE/UNION.png)
 Этот запрос выбирает все имена из таблицы patients, из таблицы doctors и обьединяет их, удаляя дубликаты. В результате выполнения этого кода был получен список уникальных имен, которые встречаются либо в таблице doctors, либо в таблице patient.
@@ -72,7 +84,7 @@
 Этот запрос выбират имена из таблицы pateents и фильтрует имена, кторые не заканчиваютсяна букву "а". В итоге, мы получаем имена пациентов, которые не заканчиваются на букву "а".
 6. COUNT
 ![](CODE/COUNT.png)
-Этот запрос
+Этот запрос выбирает столбец name, подсчитывает количество строк для каждой группы с помощью COUNT и назначает результат псевдониму amount, все данные берутся из таблицы specialtions, группирует строки по значению столбца name, сортирует результат по столбцу amount. В результате этот код выдает список специализации с соответствующем количеством специалистов 
 
 
 
