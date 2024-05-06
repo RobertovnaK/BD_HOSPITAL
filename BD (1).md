@@ -160,10 +160,10 @@
 ### 4. SELECT 
 
 ```
+
 	SELECT doctors_id, diagnosis
 
 	FROM sick_leaves
-
 
 ```
 
@@ -174,12 +174,12 @@
 ### 5. WHERE
  
 ```
+
 	SELECT name
 
 	FROM patients
 
 	WHERE name NOT LIKE '%a'
-
 
 ```
 
