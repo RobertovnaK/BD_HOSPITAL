@@ -12,15 +12,15 @@
 
 ![](screen/doctors.png)
 
--doctors_id (INTEGER) - уникальный индефикатор доктора 
+- doctors_id (INTEGER) - уникальный индефикатор доктора 
 
--name (TEXT) - фио доктора
+- name (TEXT) - фио доктора
 
--adress (TEXT) - адрес доктора
+- adress (TEXT) - адрес доктора
 
--birthday (DATE) - дата рождения доктора
+- birthday (DATE) - дата рождения доктора
 
--telephone (TEXT) - номер телефона доктора
+- telephone (TEXT) - номер телефона доктора
 
 ![](screen/doctorsb.png)
 
@@ -29,19 +29,19 @@
 
 ![](screen/patients.png)
 
--patients_id (INTEGER) - уникальный индефикатор доктора 
+- patients_id (INTEGER) - уникальный индефикатор доктора 
 
--name (TEXT) - фио пациента
+- name (TEXT) - фио пациента
 
--adress (TEXT) - адрес пациента
+- adress (TEXT) - адрес пациента
 
--birthday (DATE) - дата рождения пациента
+- birthday (DATE) - дата рождения пациента
 
--telephone (TEXT) - номер телефона пациента
+- telephone (TEXT) - номер телефона пациента
 
--gender (TEXT) - пол пациента
+- gender (TEXT) - пол пациента
 
--policy (TEXT) - номер страхового полиса пациента
+- policy (TEXT) - номер страхового полиса пациента
 
 ![](screen/patientsb.png)
 
@@ -49,15 +49,15 @@
 
 ![](screen/receptions.png)
 
--receptions_id (INTEGER) - уникальный индефикатор приёма 
+- receptions_id (INTEGER) - уникальный индефикатор приёма 
 
--patients_id (INTEGER) - индефикатор пациента, связан с таблицей patients по полю patients_id
+- patients_id (INTEGER) - индефикатор пациента, связан с таблицей patients по полю patients_id
 
--data_time (DATATIME) - дата и время приема пациента
+- data_time (DATATIME) - дата и время приема пациента
 
--complaints (TEXT) - жалобы пациента
+- complaints (TEXT) - жалобы пациента
 
--diagnosis (TEXT) - диагноз пациента
+- diagnosis (TEXT) - диагноз пациента
 
 
 ![](screen/receptionsb.png)
@@ -66,13 +66,13 @@
 
 ![](screen/schedules.png)
 
--schedules_id (INTEGER) - уникальный индефикатор расписания
+- schedules_id (INTEGER) - уникальный индефикатор расписания
 
--doctors_id (INTEGER) - индефикатор доктора, связан с таблицей doctors по полю doctors_id
+- doctors_id (INTEGER) - индефикатор доктора, связан с таблицей doctors по полю doctors_id
 
--office_number (TEXT) - номер кабинета
+- office_number (TEXT) - номер кабинета
 
--data_time (DATATIME) - дата и время приема в кабинете
+- data_time (DATATIME) - дата и время приема в кабинете
 
 ![](screen/schedulesb.png)
 
@@ -82,11 +82,11 @@
 
 - sick_leaves_id (INTEGER) - уникальный индефикатор больничного листа
 
--doctors_id (INTEGER) - индефикатор доктора, связан с таблицей doctors по полю doctors_id
+- doctors_id (INTEGER) - индефикатор доктора, связан с таблицей doctors по полю doctors_id
 
--patients_id (INTEGER) - индефикатор пациента, связан с таблицей patients по полю patients_id
+- patients_id (INTEGER) - индефикатор пациента, связан с таблицей patients по полю patients_id
 
--diagnosis (TEXT) - диагноз пациента
+- diagnosis (TEXT) - диагноз пациента
 
 ![](screen/sick_leavesb.png)
 
@@ -94,11 +94,11 @@
 
 ![](screen/spicialitions.png)
 
--specialtions (INTEGER) - уникальный индефикатор специализации
+- specialtions (INTEGER) - уникальный индефикатор специализации
 
--doctors_id (INTEGER) - индефикатор доктора, связан с таблицей doctors по полю doctors_id
+- doctors_id (INTEGER) - индефикатор доктора, связан с таблицей doctors по полю doctors_id
 
--name (TEXT) - название специализации доктора
+- name (TEXT) - название специализации доктора
 
 ![](screen/specialitionsb.png)
 
