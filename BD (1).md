@@ -21,8 +21,6 @@
 -birthday (DATE) - дата рождения доктора
 
 -telephone (TEXT) - номер телефона доктора
-       
-![](screen/doctors.png)
 
 ![](screen/doctorsb.png)
 
