@@ -8,15 +8,15 @@
 
 ## Сущности (Таблицы)
 
-### 1. doctors
+### 1. doctor
 
 ![](screen/doctors.png)
 
-- doctors_id (INTEGER) - уникальный индефикатор доктора 
+- doctor_id (INTEGER PRIMARY KEY) - уникальный индефикатор доктора 
 
 - name (TEXT) - фио доктора
 
-- adress (TEXT) - адрес доктора
+- adres (TEXT) - адрес доктора
 
 - birthday (DATE) - дата рождения доктора
 
@@ -24,16 +24,16 @@
 
 ![](screen/doctorsb.png)
 
-### 2. patients
+### 2. patient
 
 
 ![](screen/patients.png)
 
-- patients_id (INTEGER) - уникальный индефикатор доктора 
+- patient_id (INTEGER PRIMARY KEY) - уникальный индефикатор доктора 
 
 - name (TEXT) - фио пациента
 
-- adress (TEXT) - адрес пациента
+- adres (TEXT) - адрес пациента
 
 - birthday (DATE) - дата рождения пациента
 
@@ -45,30 +45,30 @@
 
 ![](screen/patientsb.png)
 
-### 3. receptions
+### 3. reception
 
 ![](screen/receptions.png)
 
-- receptions_id (INTEGER) - уникальный индефикатор приёма 
+- reception_id (INTEGER PRIMARY KEY) - уникальный индефикатор приёма 
 
-- patients_id (INTEGER) - индефикатор пациента, связан с таблицей patients по полю patients_id
+- patient_id (INTEGER) - индефикатор пациента, связан с таблицей patients по полю patients_id
 
 - data_time (DATATIME) - дата и время приема пациента
 
-- complaints (TEXT) - жалобы пациента
+- complaint (TEXT) - жалобы пациента
 
 - diagnosis (TEXT) - диагноз пациента
 
 
 ![](screen/receptionsb.png)
 
-### 4. schedules
+### 4. schedule
 
 ![](screen/schedules.png)
 
-- schedules_id (INTEGER) - уникальный индефикатор расписания
+- schedule_id (INTEGER PRIMARY KEY) - уникальный индефикатор расписания
 
-- doctors_id (INTEGER) - индефикатор доктора, связан с таблицей doctors по полю doctors_id
+- doctor_id (INTEGER) - индефикатор доктора, связан с таблицей doctors по полю doctors_id
 
 - office_number (TEXT) - номер кабинета
 
@@ -76,27 +76,27 @@
 
 ![](screen/schedulesb.png)
 
-### 5. sick_leaves
+### 5. sick_leave
 
 ![](screen/sick_leaves.png)
 
-- sick_leaves_id (INTEGER) - уникальный индефикатор больничного листа
+- sick_leave_id (INTEGER PRIMARY KEY) - уникальный индефикатор больничного листа
 
-- doctors_id (INTEGER) - индефикатор доктора, связан с таблицей doctors по полю doctors_id
+- doctor_id (INTEGER) - индефикатор доктора, связан с таблицей doctors по полю doctors_id
 
-- patients_id (INTEGER) - индефикатор пациента, связан с таблицей patients по полю patients_id
+- patient_id (INTEGER) - индефикатор пациента, связан с таблицей patients по полю patients_id
 
 - diagnosis (TEXT) - диагноз пациента
 
 ![](screen/sick_leavesb.png)
 
-### 6. specialtions
+### 6. specialtion
 
 ![](screen/spicialitions.png)
 
-- specialtions (INTEGER) - уникальный индефикатор специализации
+- specialtion (INTEGER PRIMARY KEY) - уникальный индефикатор специализации
 
-- doctors_id (INTEGER) - индефикатор доктора, связан с таблицей doctors по полю doctors_id
+- doctor_id (INTEGER) - индефикатор доктора, связан с таблицей doctors по полю doctors_id
 
 - name (TEXT) - название специализации доктора
 
@@ -109,13 +109,13 @@
 ```
 	SELECT name
 
-		FROM doctors
+		FROM doctor
 
 		UNION
 
 	SELECT name
 
-		FROM patients
+		FROM patient
 	
 ```
 
@@ -129,7 +129,7 @@
 
 	SELECT name, birthday 
 
-		FROM patients 
+		FROM patient
 
 	ORDER BY birthday DESC
 
@@ -143,9 +143,9 @@
 
 ```
 
-	SELECT diagnosis, patients_id
+	SELECT diagnosis, patient_id
 
-		FROM sick_leaves
+		FROM sick_leave
 
 	GROUP BY diagnosis
 
@@ -161,9 +161,9 @@
 
 ```
 
-	SELECT doctors_id, diagnosis
+	SELECT doctor_id, diagnosis
 
-	FROM sick_leaves
+	FROM sick_leave
 
 ```
 
@@ -177,7 +177,7 @@
 
 	SELECT name
 
-	FROM patients
+	FROM patient
 
 	WHERE name NOT LIKE '%a'
 
@@ -195,7 +195,7 @@
 
 ```
 
-	SELECT name, COUNT (*) AS amount FROM specialtions
+	SELECT name, COUNT (*) AS amount FROM specialtion
 
 	GROUP BY name
 
@@ -214,7 +214,7 @@
 
 		AS самое_длинное_название_специальности 
 
-	FROM specialtions
+	FROM specialtion
 	
 ```
 ![](CODE/MAX.png)
@@ -225,13 +225,13 @@
 ### 3. MIN 
 
 ```
-	SELECT doctors_id, 
+	SELECT doctor_id, 
 		
 		MIN(data_time) AS самая_поздняя_запись_каждого_врача
 	
 	FROM schedules
 
-	GROUP BY doctors_id
+	GROUP BY doctor_id
 	
 ```
 
@@ -247,7 +247,7 @@
 
 	SELECT name, RANK() OVER (ORDER BY birthday) AS doctor_rank
 
-	FROM doctors
+	FROM doctor
 
 ```
 
@@ -259,15 +259,15 @@
 
 ```
 
-	WITH Numbered_ Patients AS (
+	WITH Numbered_Patient AS (
 
 		SELECT *,
 
 			DENSE_RANK() OVER(ORDER BY birthday) AS rank
 
-		FROM patients )
+		FROM patient )
 
-	SELECT * FROM Numbered Patients
+	SELECT * FROM Numbered_Patient
 
 ```
 
@@ -279,15 +279,15 @@
 
 ```
 
-	WITH Numbered_Doctors AS (
+	WITH Numbered_Doctor AS (
 
 		SELECT *,
 		
 		ROW_NUMBER() OVER(ORDER BY birthday DESC) AS row_num
 
-		FROM doctors )
+		FROM doctor )
 
-	SELECT * FROM Numbered_Doctors
+	SELECT * FROM Numbered_Doctor
 
 ```
 
@@ -299,15 +299,15 @@
 
 ```
 
-	WITH Grouped_Patients AS (
+	WITH Grouped_Patient AS (
 
 		SELECT *,
 
 			NTILE(3) OVER(ORDER BY DATE('now') - birthday) AS age_group
 
-		FROM patients )
+		FROM patient )
 
-	SELECT * FROM Grouped_Patients;
+	SELECT * FROM Grouped_Patient
 
 ```
 
@@ -321,11 +321,11 @@
 
 ```
 	SELECT
-		doctors_id,
+		doctor_id,
 
 		LEAD(specialtions_id) OVER (PARTITION BY doctors_id ORDER BY specialtions_id) AS previous_specialtions
 
-	FROM specialtions
+	FROM specialtion
 
 ```
 
@@ -338,11 +338,11 @@
 
 ```
 	SELECT
-		patients_id,
+		patient_id,
 
-		LAG(diagnosis) OVER (PARTITION BY patients_id ORDER BY sick_leaves_id) AS previous_diagnosis
+		LAG(diagnosis) OVER (PARTITION BY patient_id ORDER BY sick_leave_id) AS previous_diagnosis
 
-	FROM sick_leaves
+	FROM sick_leave
 
 
 ```
@@ -358,13 +358,13 @@
 
 ```
 	SELECT
-		doctors.name,
+		doctor.name,
 
-		specialtions.name
+		specialtion.name
 
-	FROM doctors
+	FROM doctor
 
-		INNER JOIN specialtions ON doctors.doctors_id = specialtions.doctors_id
+		INNER JOIN specialtion ON doctor.doctor_id = specialtion.doctor_id
 
 
 ```
@@ -377,13 +377,13 @@
 
 ```
 	SELECT
-		patients.name,
+		patient.name,
 
-		sick_leaves.diagnosis
+		sick_leave.diagnosis
 
-	FROM patients
+	FROM patient
 
-		LEFT JOIN sick_leaves ON patients.patients_id = sick_leaves.patients_id
+		LEFT JOIN sick_leave ON patient.patient_id = sick_leave.patient_id
 
 
 ```
@@ -398,13 +398,13 @@
 
 ```
 	SELECT
-		patients.name,
+		patient.name,
 
-		receptions.data_time
+		reception.data_time
 
-	FROM patients
+	FROM patient
 
-		LEFT JOIN receptions ON patients.patients_id = receptions.patients_id
+		LEFT JOIN reception ON patient.patient_id = reception.patient_id
 
 ```
 
@@ -415,13 +415,13 @@
 ```
 
 	SELECT
-		patients.name,
+		patient.name,
 
-		receptions.complaints
+		reception.complaint
 
-	FROM patients
+	FROM patient
 
-		LEFT JOIN receptions ON patients.patients_id = receptions.patients_id
+		LEFT JOIN reception ON patient.patient_id = reception.patient_id
 
 ```
 
@@ -445,7 +445,7 @@
 
 	ELSE 'мужской пол' END AS gender
 
-	FROM  patients
+	FROM  patient
 
 ```
 
@@ -455,7 +455,7 @@
 
 ```
 
-	WITH hospital AS (SELECT name, adress FROM doctors)
+	WITH hospital AS (SELECT name, adress FROM doctor)
 
 	SELECT * FROM hospital
 
