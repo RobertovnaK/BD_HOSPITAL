@@ -27,8 +27,7 @@
 ### 2. patient
 
 
-![](screen/patients.png)
-
+![](CODE/code/a.png)
 - patient_id (INTEGER PRIMARY KEY) - уникальный индефикатор доктора 
 
 - name (TEXT) - фио пациента
@@ -47,7 +46,7 @@
 
 ### 3. reception
 
-![](screen/receptions.png)
+![](CODE/code/b.png)
 
 - reception_id (INTEGER PRIMARY KEY) - уникальный индефикатор приёма 
 
@@ -64,7 +63,7 @@
 
 ### 4. schedule
 
-![](screen/schedules.png)
+![](CODE/code/c.png)
 
 - schedule_id (INTEGER PRIMARY KEY) - уникальный индефикатор расписания
 
@@ -78,7 +77,7 @@
 
 ### 5. sick_leave
 
-![](screen/sick_leaves.png)
+![](CODE/code/d.png)
 
 - sick_leave_id (INTEGER PRIMARY KEY) - уникальный индефикатор больничного листа
 
@@ -92,7 +91,7 @@
 
 ### 6. specialtion
 
-![](screen/spicialitions.png)
+![](CODE/code/i.png)
 
 - specialtion (INTEGER PRIMARY KEY) - уникальный индефикатор специализации
 
