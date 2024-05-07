@@ -10,7 +10,7 @@
 
 ### 1. doctor
 
-![](screen/doctors.png)
+![](CODE/code/e.png)
 
 - doctor_id (INTEGER PRIMARY KEY) - уникальный индефикатор доктора 
 
