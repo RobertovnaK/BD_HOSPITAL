@@ -316,37 +316,22 @@
 
 # Функции смещения:
 
-### 1. LEAD
+### 1. 
 
 ```
-	SELECT
-		doctor_id,
+	SELECT name, adres, birthday
 
-		LEAD(specialtions_id) OVER (PARTITION BY doctors_id ORDER BY specialtions_id) AS previous_specialtions
+	FROM doctor
 
-	FROM specialtion
+	where name NOT LIKE '%а'
 
-```
+	ORDER BY birthday
 
-![](CODE/LEAD.png)
-
-Этот запрос выводит идентификатор доктора и следующую специализацию для каждого врача в таблице "specialtions". Но т.к. в моей БД у докторов нет следующей специализации, в результате выводится NULL.
-
- 
-### 2. LAG
-
-```
-	SELECT
-		patient_id,
-
-		LAG(diagnosis) OVER (PARTITION BY patient_id ORDER BY sick_leave_id) AS previous_diagnosis
-
-	FROM sick_leave
-
+	LIMIT 3 OFFSET 1
 
 ```
 
-![](CODE/LAG.png)
+![](CODE/LIMITOFFSET.png)
 
 
 Этот запрос выводит идентификатор пациента и предыдущий диагноз для каждого пациента в таблице "sick_leaves". Но т.к. в моей БД у пациентов нет предыдущего диагноза, в результате выводится NULL.
